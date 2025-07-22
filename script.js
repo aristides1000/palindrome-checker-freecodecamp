@@ -39,6 +39,6 @@ checkBtn.addEventListener("click", () => {
 
 const deletedInnecesaryChars = (text) => {
   const toLower = text.toLowerCase();
-  const regEx = /[_]/g;
+  const regEx = /[_\s]/g;
   return toLower.replace(regEx, '');
 };
