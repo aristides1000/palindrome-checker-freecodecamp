@@ -11,7 +11,7 @@ checkBtn.addEventListener("click", () => {
     result.textContent = `${textInput.value} is a palindrome`;
   }
 
-  const transformedText = deletedInnecesaryChars(textInput.value);
+  const transformedText = deletedUnnecessaryChars(textInput.value);
 
   const textLength = transformedText.length;
 
@@ -31,14 +31,14 @@ checkBtn.addEventListener("click", () => {
     reversedArray.push(secondPartText[i]);
     i--;
   }
-  const reversedSecondPart = reversedArray.join('');
+  let reversedSecondPart = reversedArray.join('');
   /* End steps to reverse second part of string */
 
   result.textContent = (firstPartText === reversedSecondPart) ? `${textInput.value} is a palindrome` : `${textInput.value} is not a palindrome`;
 });
 
-const deletedInnecesaryChars = (text) => {
+const deletedUnnecessaryChars = (text) => {
   const toLower = text.toLowerCase();
-  const regEx = /[_\s]/g;
+  const regEx = /[^a-z^0-9]/g;
   return toLower.replace(regEx, '');
 };
