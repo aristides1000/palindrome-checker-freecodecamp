@@ -11,18 +11,18 @@ checkBtn.addEventListener("click", () => {
     result.textContent = `${textInput.value} is a palindrome`;
   }
 
-  const transformedText = "";
+  const transformedText = deletedInnecesaryChars(textInput.value);
 
-  const textLength = textInput.value.length;
+  const textLength = transformedText.length;
 
   const calculatedHalfCeilText = Math.ceil(textLength / 2);
 
-  const firstPartText = (textInput.value.length % 2 === 0) ?
-                        textInput.value.slice(0, calculatedHalfCeilText) :
-                        textInput.value.slice(0, calculatedHalfCeilText - 1);
-  const secondPartText = (textInput.value.length % 2 === 0) ?
-                        textInput.value.slice(calculatedHalfCeilText, textLength) :
-                        textInput.value.slice(calculatedHalfCeilText, textLength);
+  const firstPartText = (textLength % 2 === 0) ?
+                        transformedText.slice(0, calculatedHalfCeilText) :
+                        transformedText.slice(0, calculatedHalfCeilText - 1);
+  const secondPartText = (textLength % 2 === 0) ?
+                        transformedText.slice(calculatedHalfCeilText, textLength) :
+                        transformedText.slice(calculatedHalfCeilText, textLength);
 
   /* Steps to reverse second part of string */
   const reversedArray = [];
@@ -36,3 +36,9 @@ checkBtn.addEventListener("click", () => {
 
   result.textContent = (firstPartText === reversedSecondPart) ? `${textInput.value} is a palindrome` : `${textInput.value} is not a palindrome`;
 });
+
+const deletedInnecesaryChars = (text) => {
+  const toLower = text.toLowerCase();
+  const regEx = /[_]/g;
+  return toLower.replace(regEx, '');
+};
