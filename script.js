@@ -35,6 +35,8 @@ checkBtn.addEventListener("click", () => {
   /* End steps to reverse second part of string */
 
   result.textContent = (firstPartText === reversedSecondPart) ? `${textInput.value} is a palindrome` : `${textInput.value} is not a palindrome`;
+
+  textInput.value = '';
 });
 
 const deletedUnnecessaryChars = (text) => {
