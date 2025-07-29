@@ -43,5 +43,12 @@ h1 {
 label {
   font-family: Arial, Helvetica, sans-serif;
   margin-bottom: 2rem;
-  border-top: 1px solid white;
+}
+
+input {
+  border: none;
+  box-shadow: 0 -2px #5A01A7 inset;
+  padding: 0.25rem;
+  text-align: center;
+  width: 15rem;
 }
