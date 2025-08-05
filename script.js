@@ -34,6 +34,8 @@ checkBtn.addEventListener("click", () => {
   let reversedSecondPart = reversedArray.join('');
   /* End steps to reverse second part of string */
 
+  result.style.display = 'block';
+
   result.textContent = (firstPartText === reversedSecondPart) ? `${textInput.value} is a palindrome` : `${textInput.value} is not a palindrome`;
 
   textInput.value = '';
